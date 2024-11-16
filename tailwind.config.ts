@@ -9,8 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#FFF2DD",
+      },
+      fontFamily: {
+        "Marr-Sans-Cond-SemiBold": ["Marr-Sans-Cond-SemiBold", "sans-serif"],
+        "Marr-Sans-Cond-Medium": ["Marr-Sans-Cond-Medium", "sans-serif"],
       },
     },
   },

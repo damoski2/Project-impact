@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-feature-settings: "liga", "kern";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: clip;
+}
+
+// FONTS
+
+@font-face {
+  font-family: "Marr-Sans-Cond-SemiBold";
+  src: url("../assets/fonts/Fonts/Marr-web/MarrSansCondensed-Semibold-Web.woff2")
+      format("woff2"),
+    url("../assets/fonts/Fonts/Marr-web/MarrSansCondensed-Semibold-Web.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Marr-Sans-Cond-Medium";
+  src: url("../assets/fonts/Fonts/Marr-web/MarrSansCondensed-Medium-Web.woff2")
+      format("woff2"),
+    url("../assets/fonts/Fonts/Marr-web/MarrSansCondensed-Medium-Web.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+p{
+  font-family: "Marr-Sans-Cond-Medium";
+  
+}
+
+h1{
+  font-family: "Marr-Sans-Cond-SemiBold";
+  
+}
+
+/*  Gsap line splitting overflow class  */
+
+.lineParent {
+  overflow: hidden;
+}
+
