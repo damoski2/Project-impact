@@ -14,10 +14,12 @@ import {
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import Splitting from "splitting";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 // Dynamically import the TextSplitting component with no SSR
-const TextSplitting = dynamic(() => import('../components/TextSplitting'), { ssr: false });
+const TextSplitting = dynamic(() => import("../components/TextSplitting"), {
+  ssr: false,
+});
 
 const returnBulletSizeBasedOnScreenSize = (): number => {
   // Check if window is defined
@@ -38,13 +40,12 @@ const returnBulletSizeBasedOnScreenSize = (): number => {
   }
 };
 
-
-
 const MIN_NUMBER = 0;
 const MAX_NUMBER = 132;
 
 // Update BULLET_SIZE initialization
-const BULLET_SIZE = typeof window !== "undefined" ? returnBulletSizeBasedOnScreenSize() : 172;
+const BULLET_SIZE =
+  typeof window !== "undefined" ? returnBulletSizeBasedOnScreenSize() : 172;
 
 export default function Home() {
   const containerRef: any = useRef(null);
@@ -65,7 +66,6 @@ export default function Home() {
     return ballColors[Math.floor(Math.random() * ballColors.length)];
   };
 
-  
   useEffect(() => {
     const handleResize = () => {
       setDimensions({
@@ -97,11 +97,10 @@ export default function Home() {
 
     // Set up Matter.js
     engineRef.current = Matter.Engine.create({
-      //enableSleeping: false, 
+      //enableSleeping: false,
     });
     engineRef.current.world.gravity.y = 0.5;
 
-    
     const bounds = {
       thickness: BULLET_SIZE,
       properties: {
@@ -269,10 +268,6 @@ export default function Home() {
     };
   }, [dimensions]);
 
- 
-
- 
-
   return (
     <main className="relative">
       <div
@@ -286,11 +281,11 @@ export default function Home() {
           style={{ transformOrigin: "center center" }}
         />
 
-        <div className="absolute top-1/2 left-[200px] sm:left-[490px] md:left-[700px] lg:left-[900px] xl:left-[1150px] -translate-x-1/2 -translate-y-1/2 z-20 sm:w-[453px] w-full md:px-8 px-5">
+        <div className="absolute top-1/2 right-[20px] sm:right-[40px] md:right-[90px] -translate-y-1/2 z-20 sm:w-[453px] w-fit">
           <h1 className="text-[90px] leading-[70px] sm:text-[140px] sm:leading-[120px] md:text-[200px] md:leading-[180px] lg:text-[240px] lg:leading-[220px] xl:text-[328.1px] xl:leading-[301.86px] fadeTextHeading">
             {loaderPercentage}
           </h1>
-          <p className="mt-4 text-[16px] sm:text-[20px] md:text-[28px] lg:text-[34px] xl:text-[39.12px] leading-[35.99px] font-semibold fadeTextPara">
+          <p className="sm:mt-4 text-[16px] sm:text-[20px] md:text-[28px] lg:text-[34px] xl:text-[39.12px] leading-[35.99px] font-semibold fadeTextPara">
             projects creating impact for people and the planet
           </p>
         </div>
